@@ -11,7 +11,7 @@ import scrapy
 class HuabanItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    #分类
+    #分类，终级页面没有
     category = scrapy.Field()
     #作者/用户名
     author = scrapy.Field()
