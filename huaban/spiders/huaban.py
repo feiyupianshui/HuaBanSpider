@@ -1,12 +1,14 @@
 #!/use/bin/env python
 #_*_coding:utf-8_*_
 import scrapy
-from scrapy.spider import CrawlSpider, Rule, Request #偷懒爬全站
-from scrapy.linkextractors import LinkExtractor #抽出链接对象
-from scrapy import FromRequest #登录包
+import re
+from scrapy.http import Request
+from bs4 import BeautifulSoup
+from scrapy import FromRequest
+from ..musqlpipeline.sql import Sql
 from huaban.items import HuabanItem
 
-class myspider(CrawlSpider):
+class Myspider(Spider):
     name = 'huaban'
     keyword = '剑三'
     allowed_domain = ['http://huaban.com/']
